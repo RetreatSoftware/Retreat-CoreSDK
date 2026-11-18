@@ -1,0 +1,13 @@
+# Retreat-CoreSDK workspace: small, generic crates shared by the engine and the
+# gameplay modules. No crate here depends on anything else in Retreat.
+
+[workspace]
+resolver = "3"
+members = [
+    "crates/retreat_rng",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+publish = false

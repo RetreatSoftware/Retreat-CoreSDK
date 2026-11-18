@@ -2,6 +2,10 @@
 
 A shared, reusable software development kit containing the common utilities, mathematical functions, data structures, helper classes, and foundational abstractions used by the other Retreat projects.
 
+## Crates
+
+- `retreat_rng` — seeded, deterministic random numbers.
+
 ## Part of the Retreat ecosystem
 
 - [Retreat-Website](https://github.com/RetreatSoftware/Retreat-Website) â€” web platform

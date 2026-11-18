@@ -8,7 +8,22 @@ The root `../CLAUDE.md` also applies here. This file may narrow its scope (see "
 
 ## Status
 
-Early stage. No code exists yet. Do not implement anything beyond what is explicitly requested.
+Early stage. First crate: `retreat_rng`. Do not implement anything beyond what is explicitly requested.
+
+## Layout
+
+Cargo workspace (`Cargo.toml`); one small crate per area under `crates/`:
+
+- `crates/retreat_rng/` — `RetreatRng`, seeded deterministic random numbers (SplitMix64). Consumers: the engine's
+  command-script runner and gameplay modules.
+
+## Decisions
+
+- **`retreat_rng` implements its algorithm itself (SplitMix64) and has no dependencies.** A seed must produce the same
+  sequence on every platform and in every version (scripts, replays and native-vs-WASM checks depend on it); with our
+  own algorithm, no dependency update can change it. Changing an existing seed's output is a breaking change; the
+  reference-vector test guards it. Not for security (predictable by design). Revisit if a better-quality generator
+  is needed (e.g. xoshiro256**), as a new type, not by changing `RetreatRng`.
 
 ## What belongs here
 

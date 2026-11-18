@@ -1,0 +1,10 @@
+[package]
+name = "retreat_rng"
+description = "Seeded, deterministic random number generator (SplitMix64) for reproducible runs."
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+# No dependencies on purpose: the algorithm is ours, so a dependency update can
+# never change the sequence a seed produces (replays and determinism checks rely on it).
+[dependencies]
