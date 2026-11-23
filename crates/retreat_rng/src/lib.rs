@@ -16,7 +16,7 @@
 //! ```
 
 /// SplitMix64 generator (Steele, Lea, Flood 2014; reference: <https://prng.di.unimi.it/splitmix64.c>).
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub struct RetreatRng {
     state: u64,
 }

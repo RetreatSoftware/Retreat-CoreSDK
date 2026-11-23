@@ -11,3 +11,10 @@ members = [
 version = "0.1.0"
 edition = "2024"
 publish = false
+
+# Keep `target/` small (see ../CLAUDE.md, "Build size rules"): file/line info only, none for dependencies.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
